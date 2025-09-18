@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: '../actions/register_user_action.php',
+            url: '../actions/register_customer_action.php',
             type: 'POST',
             data: {
                 name: name,
