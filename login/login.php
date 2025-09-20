@@ -135,12 +135,14 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email <i class="fa fa-envelope"></i></label>
                                 <input type="email" class="form-control animate__animated animate__fadeInUp" id="email" name="email" required>
+                                <div id = 'emailError'></div>
                             </div>
                             <div class="mb-4">
                                 <label for="password" class="form-label">Password <i class="fa fa-lock"></i></label>
                                 <input type="password" class="form-control animate__animated animate__fadeInUp" id="password" name="password" required>
+                                <div id = 'passwError'></div>
                             </div>
-                            <button type="submit" class="btn btn-custom w-100 animate-pulse-custom">Login</button>
+                            <button type="submit" class="btn btn-custom w-100 animate-pulse-custom" id = 'submitBtn' onclick = 'validateFormInput()'>Login</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">
