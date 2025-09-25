@@ -28,13 +28,6 @@ if ($user_id) {
     $response['status'] = 'success';
     $response['message'] = 'Registered successfully';
     $response['user_id'] = $user_id;
-
-    // setting session vars of user
-    $_SESSION['name'] = $name;
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
-    $_SESSION['phone_number'] = $phone_number;
-    $_SESSION['role'] = $role;
 } else {
     $response['status'] = 'error';
     $response['message'] = 'Failed to register';
