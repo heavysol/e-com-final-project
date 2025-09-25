@@ -56,7 +56,7 @@ class User extends db_connection
         return false;
     }
 
-    public function getUserByEmail($email)
+    public function get($email)
     {
         $stmt = $this->db->prepare("SELECT * FROM customer WHERE customer_email = ?");
         $stmt->bind_param("s", $email);
