@@ -16,5 +16,9 @@ function register_user_ctr($name, $email, $password, $phone_number, $role)
 function get_user_by_email_ctr($email)
 {
     $user = new User();
-    return $user->getUserByEmail($email);
+    return $user->get($email);
+}
+
+function login_customer_ctr($kwargs) {
+    get_user_by_email_ctr($kwargs);
 }
