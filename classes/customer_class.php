@@ -65,7 +65,7 @@ class User extends db_connection
     }
 
     public function authenticateUser($email, $password) {
-        $user = $this->getUserByEmail($email); // get customer by email
+        $user = $this->get($email); // get customer by email
         // verification of password entered with that in db
         if ($user["customer_pass"] == $password) {
             $response['status'] = 'success';
