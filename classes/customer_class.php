@@ -64,4 +64,16 @@ class User extends db_connection
         return $stmt->get_result()->fetch_assoc();
     }
 
+    public function authenticateUser($email, $password) {
+        $user = $this->getUserByEmail($email); // get customer by email
+        // verification of password entered with that in db
+        if ($user["customer_pass"] == $password) {
+            $response['status'] = 'success';
+            $response['message'] = 'User authenticated successfully';
+        }
+        else {
+            $response['status'] = 'error';
+            $response['message'] = 'Authentication failed';
+        }
+    }
 }
