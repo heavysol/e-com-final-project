@@ -2,7 +2,7 @@
 
 include '../controllers/category_controller.php';
 
-$cats = get_all_cat_ctr();
+$cats = add_category_ctr($kwargs);
 echo json_encode($cats);
 
 ?>
