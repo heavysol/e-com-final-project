@@ -46,11 +46,19 @@ class Category extends db_connection
         return false;
     }
 
+    // get category
     public function get($name)
     {
         $stmt = $this->db->prepare("SELECT * FROM categories WHERE cat_name = ?");
         $stmt->bind_param("s", $name);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
+    }
+
+    // delete category
+    public function delete($n) {
+        $stmt = $this->db->prepare("DELETE FROM categories WHERE cat_name = ?");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
     }
 }
