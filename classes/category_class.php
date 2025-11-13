@@ -69,26 +69,12 @@ class Category extends db_connection
     public function getAll() {
         $result = $this->db->prepare("SELECT * FROM categories");
         $result->execute();
-        if ($result->num_rows > 0){
-            // Start table and add table headers
-            echo "<table border='1'>";
-            echo "<tr> <th>Id</th> <th>Category name</th> </tr>";
-            
-            // output data of each row
+        if ($result->num_rows > 0) {
+            $cats = [];
             while($row = $result->fetch_assoc()){
-                echo "<tr>";
-                echo "<td>".$row["cat_id"]."</td>";
-                echo "<td>".$row["cat_name"]."</td>";
-                echo "<td> <button onclick = 'update(" . $row['cat_id'] . "" . ")'> Update </button> <button onclick = 'del(" . $row['cat_id'] . "" . ")'> Delete </button> </td>";
-                echo "</tr>";                  
+                $cats = [];                
             }
-            echo "<tr>";
-            echo "<td> <button onclick = 'add()'> Create category </button> </td>";
-            echo "</tr>";
-            echo "</table>";
-        } else {
-            echo "<h1>0 results</h1>";
-            echo "<button onclick = 'add()'> Create category </button>";
+            return $cats;
         }
     }
 

@@ -1,7 +1,7 @@
-export function on() {
+function on() {
   document.getElementById("overlay").style.display = "block";
 }
 
-export function off() {
+function off() {
   document.getElementById("overlay").style.display = "none";
 }
