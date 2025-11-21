@@ -41,5 +41,6 @@ async function createAccount(email, password) {
     const { data, error } = await supabase.auth.signUp({
         email: email,
         password: password,
-    })   
+    })
+    if (error == null) window.location.href = '../admin/category.php'; // if signup successful, go to category.php   
 }
