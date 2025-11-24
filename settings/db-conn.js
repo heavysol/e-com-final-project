@@ -18,12 +18,22 @@ export async function insertDataToSupabase(tableName, ...fieldData) {
     console.log(error);
 }
 
-// Fetch data from Supabase db
+// Fetch one item of data from table of particular field
 export async function fetchDataFromSupabase(tableName, fieldName, fieldValue) {
     const { data, error } = await supabase // checking for value
         .from(tableName)
         .select()
         .eq(fieldName, fieldValue);
+    console.log(error);
+    console.log(data)
+    return data;
+}
+
+// Fetch all data from particular table
+export async function fetchAllDataFromSupabase(tableName) {
+    const { data, error } = await supabase // checking for value
+        .from(tableName)
+        .select()
     console.log(error);
     console.log(data)
     return data;
