@@ -38,3 +38,11 @@ export async function fetchAllDataFromSupabase(tableName) {
     console.log(data)
     return data;
 }
+
+// update data in field in table
+export async function updateDataFromSupabase(tableName, fieldName, primaryKey, primaryKeyVal,newValue) {
+    const { error } = await supabase
+        .from(tableName)
+        .update({ fieldName: newValue })
+        .eq(primaryKey, primaryKeyVal) // primaryKey and primaryKeyVal will be used to identify the record to be updated
+}
