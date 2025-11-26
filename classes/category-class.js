@@ -1,7 +1,7 @@
 /* Class handling model layer for CRUD category ops */
 import { deleteDataFromSupabase, fetchAllDataFromSupabase, insertDataToSupabase, updateDataFromSupabase } from "../settings/db-conn.js";
 
-class Category {
+export class Category {
     constructor() {
         this.id = null;
         this.name = null;
