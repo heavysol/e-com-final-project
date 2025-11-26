@@ -46,3 +46,11 @@ export async function updateDataFromSupabase(tableName, fieldName, primaryKey, p
         .update({ fieldName: newValue })
         .eq(primaryKey, primaryKeyVal) // primaryKey and primaryKeyVal will be used to identify the record to be updated
 }
+
+// Fetch all data from particular table
+export async function deleteDataFromSupabase(tableName, primaryKey, primaryKeyVal) {
+    const response = await supabase // checking for value
+        .from(tableName)
+        .delete()
+        .eq(primaryKey, primaryKeyVal) // primaryKey and primaryKeyVal will be used to identify the record to be updated
+}
