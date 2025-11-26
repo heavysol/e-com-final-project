@@ -1,5 +1,5 @@
 /* Class handling model layer for CRUD category ops */
-import { fetchAllDataFromSupabase, fetchDataFromSupabase, insertDataToSupabase, updateDataFromSupabase } from "../settings/db-conn.js";
+import { deleteDataFromSupabase, fetchAllDataFromSupabase, insertDataToSupabase, updateDataFromSupabase } from "../settings/db-conn.js";
 
 class Category {
     constructor() {
@@ -24,7 +24,7 @@ class Category {
     }
 
     // delete category
-    deleteCategory() {
-        
+    deleteCategory(id, name) {
+        deleteDataFromSupabase(this.tableName, id, name)
     }
 }
