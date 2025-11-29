@@ -63,3 +63,17 @@ export async function createUserAuth(email, password) {
     })
     console.log(error)
 }
+
+// log in user in Supabase Auth
+export async function loginUserAuth(email, password) {
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+    })
+    console.log(error)
+}
+
+// log out user in Supabase Auth
+export async function logoutUserAuth() {
+    const { error } = await supabase.auth.signOut({ scope: 'local' })
+}
