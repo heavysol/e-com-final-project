@@ -77,3 +77,16 @@ export async function loginUserAuth(email, password) {
 export async function logoutUserAuth() {
     const { error } = await supabase.auth.signOut({ scope: 'local' })
 }
+
+// fetch user in current session in Supabase Auth
+export async function fetchUserAuth() {
+    const { data: { user } } = await supabase.auth.getUser()
+}
+
+// update user in Supabase Auth
+export async function updateUserAuth(email) {
+    const { data, error } = await supabase.auth.updateUser({
+        email: email
+    })
+    console.log(error);
+}
