@@ -81,6 +81,10 @@ export async function logoutUserAuth() {
 // fetch user in current session in Supabase Auth
 export async function fetchUserAuth() {
     const { data: { user } } = await supabase.auth.getUser()
+    return { 
+        'id': user.id,
+        'email': user.email
+    }
 }
 
 // update user in Supabase Auth
